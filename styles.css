@@ -1,0 +1,329 @@
+/* Custom Font - Centra No2 */
+@font-face {
+    font-family: 'Centra No2';
+    src: url('CentraNo2-Book.woff2') format('woff2'),
+         url('CentraNo2-Book.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Centra No2';
+    src: url('CentraNo2-Medium.woff2') format('woff2'),
+         url('CentraNo2-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Centra No2';
+    src: url('CentraNo2-Bold.woff2') format('woff2'),
+         url('CentraNo2-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Centra No2', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+}
+
+.nav-left,
+.nav-right {
+    flex: 1;
+}
+
+.nav-left {
+    text-align: left;
+}
+
+.nav-right {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+}
+
+.nav-center {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.nav a:hover {
+    opacity: 0.6;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.7;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Video Container - Homepage */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for modern browsers */
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* iOS Safari fix for video */
+@supports (-webkit-touch-callout: none) {
+    .video-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.fallback-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    display: none;
+}
+
+/* About Page */
+.about-content {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 3rem 6rem;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.about-text {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-text .contact {
+    margin-top: 3rem;
+}
+
+.about-text a {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid #ffffff;
+    transition: opacity 0.3s ease;
+}
+
+.about-text a:hover {
+    opacity: 0.6;
+}
+
+/* Footer */
+.footer {
+    background-color: #000000;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-left p {
+    font-size: 0.7rem;
+    color: #999999;
+    letter-spacing: 0.03em;
+    font-weight: 400;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.65rem;
+    color: #999999;
+}
+
+.footer-right img {
+    height: 20px;
+    width: auto;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav {
+        padding: 1.5rem 2rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-left,
+    .nav-right {
+        flex: 0 0 auto;
+    }
+
+    .nav-center {
+        order: -1;
+        flex: 1 0 100%;
+        margin-bottom: 1rem;
+    }
+
+    .logo {
+        height: 40px;
+        margin: 0 auto;
+    }
+
+    .nav a {
+        font-size: 0.85rem;
+    }
+
+    .social-link svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .about-content {
+        padding: 6rem 2rem 4rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .footer {
+        padding: 2rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left p {
+        font-size: 0.65rem;
+    }
+
+    .footer-right {
+        font-size: 0.6rem;
+    }
+
+    .footer-right img {
+        height: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        padding: 1rem 1.5rem;
+    }
+
+    .nav-right {
+        gap: 1rem;
+    }
+
+    .about-content {
+        padding: 5rem 1.5rem 3rem;
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: fadeIn 0.6s ease-in;
+}
