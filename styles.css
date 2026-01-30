@@ -121,6 +121,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for modern browsers */
     overflow: hidden;
     z-index: -1;
 }
@@ -135,6 +137,15 @@ body {
     height: auto;
     transform: translate(-50%, -50%);
     object-fit: cover;
+}
+
+/* iOS Safari fix for video */
+@supports (-webkit-touch-callout: none) {
+    .video-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .fallback-image {
